@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+# Greet conversation
+- story: greet twinkle path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: twinkle_who
+  - action: utter_who_is_twinkle
+  - checkpoint: check_remember
+
+- story: handle remember affirm
+  steps:
+  - checkpoint: check_remember
+  - intent: affirm
+  - action: utter_remember_affirm
+
+- story: handle remember deny
+  steps:
+  - checkpoint: check_remember
+  - intent: deny
+  - action: utter_remember_deny
+
+# Mirrored Wolrd conversation
+- story: Twinkle where is from path
+  steps:
+  - intent: twinkle_where
+  - action: utter_where_is_twinkle_from
+  - intent: mirrored_world
+  - action: utter_mirror_world
+  - checkpoint: check_mirror_world_more
+
+- story: Mirrored World path
+  steps:
+  - intent: mirrored_world
+  - action: utter_mirror_world
+  - checkpoint: check_mirror_world_more
+
+- story: handle mirror world more
+  steps:
+  - checkpoint: check_mirror_world_more
+  - intent: mirrored_world_more
+  - action: utter_mirror_world_more
+
+- story: handle mirror world deny
+  steps:
+  - checkpoint: check_mirror_world_more
+  - intent: deny
+  - action: utter_twinkle_see_you_around

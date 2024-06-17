@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - twinkle_who
+  - deny
+  - twinkle_where
+  - mirrored_world
+  - mirrored_world_more
+  - twinkle_challenge
+  # - help
+
+responses:
+  utter_greet:
+  - text: "Hey! It's a long time we didn't see."
+
+  utter_who_is_twinkle:
+  - text: "I'm Twinkle, your childhood friend. We used to play together, didn't you remember?"
+
+  utter_remember_deny:
+  - text: "I see. You don't remember me. It's okay. I'm here for you."
+  
+  utter_remember_affirm:
+  - text: "Yupi!!! I knew it you remember me. I'm so happy. We'll be best friends forever."
+
+  utter_where_is_twinkle_from:
+  - text: "I'm from the Mirrored World."
+
+  utter_mirror_world:
+  - text: "The Mirrored World is a place where everything is mirrored to real world. It's a place where you can find your true self. Do you want to know more?"
+
+  utter_mirror_world_more:
+  - text: "The Mirrored World is a reflection of your soul. This place reflects your feelings and emotions. Actually, I'm a part of you, I reflect your inner child."
+
+  # utter_help:
+  # - text: "My firefly friend is injured. We need to find a way to heal him. Can you follow me?"
+
+  utter_twinkle_see_you_around:
+  - text: "Okiedokie!!! See you around! I'm here for you."
+
+  utter_goodbye:
+    - text: "Goodbye! I hope see you soon."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

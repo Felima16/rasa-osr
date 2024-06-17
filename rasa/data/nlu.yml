@@ -1,0 +1,118 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+
+# - intent: help
+#   examples: |
+#     - my help
+#     - help you for what
+#     - what can I do for you
+#     - what can I do
+#     - would I help you
+#     - for what
+#     - how can I help you
+#     - for sure
+#     - what do you need
+#     - how can I help
+
+- intent: twinkle_who
+  examples: |
+    - who are you
+    - what are you
+    - what is your name
+    - who is this
+    - what is this
+    - from where I know you
+    - from where you know me
+    - did we meet before
+    - did we meet
+
+- intent: twinkle_where
+  examples: |
+    - where are you
+    - where are from
+    - where do you live
+    - where do you come from
+    - where do you belong
+    - where do you stay
+    - where do you exist
+    - where do you locate
+    - where do you sit
+    - where do you stand
+
+- intent: mirrored_world
+  examples: |
+    - what is mirrored world
+    - what is this mirrored world
+    - what is the mirrored world
+    - what is the world
+    - what is this world
+    - what is the world of mirror
+    - what is the world of mirrors
+
+- intent: mirrored_world_more
+  examples: |
+    - tell me more about mirrored world
+    - tell me more about this mirrored world
+    - tell me more about the mirrored world
+    - tell me more about the world
+    - tell me more about this world
+    - tell me more about that world
+    - tell me more about the world of mirror
+    - tell me more about the world of mirrors
+    - yes, I want to know 
+    - yes, tell me more
+    - yes, tell me more about it
+    - tell me more
+    - for sure
+    - I want to know more
+    - yes, continue
+    - yes, go ahead
