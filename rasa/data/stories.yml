@@ -41,7 +41,9 @@ stories:
 - story: handle mirror world more
   steps:
   - checkpoint: check_mirror_world_more
-  - intent: mirrored_world_more
+  - or:
+    - intent: affirm
+    - intent: mirrored_world_more
   - action: utter_mirror_world_more
 
 - story: handle mirror world deny
@@ -49,3 +51,48 @@ stories:
   - checkpoint: check_mirror_world_more
   - intent: deny
   - action: utter_twinkle_see_you_around
+
+# Help conversation
+- story: help path
+  steps:
+  - intent: help
+  - action: utter_help
+  - checkpoint: check_help
+
+- story: handle help deny
+  steps:
+  - checkpoint: check_help
+  - intent: deny
+  - action: utter_twinkle_see_you_around
+
+- story: handle help affirm
+  steps:
+  - checkpoint: check_help
+  - or:
+    - intent: affirm
+    - intent: help
+  - action: utter_twinkle_challenge
+  - action: help_form
+  - active_loop: help_form
+
+# - story: handle help affirm confirm luciferin
+#   steps:
+#   - or:
+#     - intent: confirm_luciferin
+#     - intent: affirm
+#   - action: help_form
+#   - active_loop: help_form
+#   - slot_was_set:
+#     - has_luciferin: true
+#   - action: utter_found_luciferin
+
+- story: handle help affirm deny luciferin
+  steps:
+  - or:
+    - intent: deny_luciferin
+    - intent: deny
+  - action: help_form
+  - active_loop: help_form
+  - slot_was_set:
+    - has_luciferin: false
+  - action: utter_has_luciferin

@@ -38,6 +38,16 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yes, continue
+    - yes, go ahead
+    - for sure
+    - definitely
+    - absolutely
+    - yep
+    - yeah
+    - sure
+    - ok
+    - okay
 
 - intent: deny
   examples: |
@@ -49,19 +59,23 @@ nlu:
     - no way
     - not really
     - nope
+    - definitely not
+    - no, I don't think so
+    - no, I don't believe so
+    - no, I don't agree
+    - I don't want that
 
-# - intent: help
-#   examples: |
-#     - my help
-#     - help you for what
-#     - what can I do for you
-#     - what can I do
-#     - would I help you
-#     - for what
-#     - how can I help you
-#     - for sure
-#     - what do you need
-#     - how can I help
+- intent: help
+  examples: |
+    - my help
+    - help you for what
+    - what can I do for you
+    - what can I do
+    - would I help you
+    - for what
+    - how can I help you
+    - what do you need
+    - how can I help
 
 - intent: twinkle_who
   examples: |
@@ -112,7 +126,28 @@ nlu:
     - yes, tell me more
     - yes, tell me more about it
     - tell me more
-    - for sure
     - I want to know more
-    - yes, continue
-    - yes, go ahead
+
+- intent: confirm_luciferin
+  examples: |
+    - I have luciferin
+    - I found luciferin
+    - I got luciferin
+    - I have it
+    - I found it
+    - I got it
+    - I have the luciferin
+    - I found the luciferin
+    - I got the luciferin
+
+- intent: deny_luciferin  
+  examples: |
+    - I don't have luciferin
+    - I didn't find luciferin
+    - I didn't get luciferin
+    - I don't have it
+    - I didn't find it
+    - I didn't get it
+    - I don't have the luciferin
+    - I didn't find the luciferin
+    - I didn't get the luciferin

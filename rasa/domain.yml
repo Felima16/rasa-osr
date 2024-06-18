@@ -9,21 +9,47 @@ intents:
   - twinkle_where
   - mirrored_world
   - mirrored_world_more
-  - twinkle_challenge
-  # - help
+  - help
+  - confirm_luciferin
+  - deny_luciferin
+
+entities:
+  - luciferin
+
+slots:
+  has_luciferin:
+    type: bool
+    influence_conversation: true
+    initial_value: false
+    mappings:
+      - type: from_intent
+        intent: confirm_luciferin
+        value: true
+      - type: from_intent
+        intent: deny_luciferin
+        value: false
+
+forms:
+  help_form:
+    required_slots:
+      - has_luciferin
 
 responses:
   utter_greet:
   - text: "Hey! It's a long time we didn't see."
+  - text: "Hello! I'm so happy to see you again."
+  - text: "Hi! I'm so excited to see you."
 
   utter_who_is_twinkle:
   - text: "I'm Twinkle, your childhood friend. We used to play together, didn't you remember?"
 
   utter_remember_deny:
   - text: "I see. You don't remember me. It's okay. I'm here for you."
+  - text: "It's okay. I'm here for you."
   
   utter_remember_affirm:
   - text: "Yupi!!! I knew it you remember me. I'm so happy. We'll be best friends forever."
+  - text: "I knew it you remember me. We'll always be friends."
 
   utter_where_is_twinkle_from:
   - text: "I'm from the Mirrored World."
@@ -32,17 +58,32 @@ responses:
   - text: "The Mirrored World is a place where everything is mirrored to real world. It's a place where you can find your true self. Do you want to know more?"
 
   utter_mirror_world_more:
-  - text: "The Mirrored World is a reflection of your soul. This place reflects your feelings and emotions. Actually, I'm a part of you, I reflect your inner child."
+  - text: "The Mirrored World is a reflection of your soul. This place reflects your feelings and emotions. Actually, I'm a part of you, I reflect your inner child. You are the one can help me"
 
-  # utter_help:
-  # - text: "My firefly friend is injured. We need to find a way to heal him. Can you follow me?"
+  utter_help:
+  - text: "My firefly friend is injured. We need to find a way to heal him. Can you help me save him?"
+
+  utter_twinkle_challenge:
+  - text: "We need to find a luciferin. Let's find it together. Did you find luciferin?"
+
+  utter_has_luciferin:
+  - text: "Did you find luciferin?"
+
+  utter_found_luciferin:
+  - text: "Yay! You found luciferin. You are the best. Let's go to save my friend."
 
   utter_twinkle_see_you_around:
   - text: "Okiedokie!!! See you around! I'm here for you."
+  - text: "I'll be here for you. See you around."
 
   utter_goodbye:
     - text: "Goodbye! I hope see you soon."
+    - text: "Bye! I hope see you soon."
+    - text: "See you later!"
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+# actions:
+#   - validate_help_form
